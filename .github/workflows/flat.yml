@@ -6,7 +6,6 @@ on:
   push:
     paths:
       - .github/workflows/flat.yml
-      - ./postprocess.js
 jobs:
   scheduled:
     runs-on: ubuntu-latest
@@ -20,4 +19,3 @@ jobs:
         with:
           http_url: https://covid.ourworldindata.org/data/owid-covid-data.json
           downloaded_filename: owid-covid-data.json
-          postprocess: ./postprocess.js
