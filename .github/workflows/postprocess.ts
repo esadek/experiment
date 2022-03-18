@@ -4,11 +4,9 @@ import { readJSON, writeJSON, removeFile } from 'https://deno.land/x/flat@0.0.15
 
 const filename = Deno.args[0];
 const data = await readJSON(filename);
+console.log(data);
 
-const time = format(new Date(), "yyyy_mm_dd_hh_mm_ss");
-
-
-const newFilename = "data/" + time + " " + filename;
+const newFilename = "postprocessed_" + filename;
 await writeJSON(newFilename, data);
 
 await removeFile(filename);
