@@ -8,7 +8,7 @@ const data = await readJSON(filename);
 const time = format(new Date(), "yyyy_mm_dd_hh_mm_ss");
 
 
-const newFilename = time + filename;
+const newFilename = "data/" + time + " " + filename;
 await writeJSON(newFilename, data);
 
 await removeFile(filename);
