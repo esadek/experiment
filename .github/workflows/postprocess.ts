@@ -3,8 +3,12 @@ import { readJSON, writeJSON, removeFile } from 'https://deno.land/x/flat@0.0.15
 
 
 const filename = Deno.args[0];
+console.log(filename)
+
 const data = await readJSON(filename);
 console.log(data);
+
+data.time = format(new Date(), "yyyy-mm-dd hh:mm:ss");
 
 const newFilename = "postprocessed_" + filename;
 await writeJSON(newFilename, data);
