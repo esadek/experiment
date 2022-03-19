@@ -4,7 +4,9 @@ request.open("GET", "postprocessed_data.json", true);
 
 request.onload = function () {
     const data = JSON.parse(this.response);
-    console.log(data);
+    const latestStatus = Object.keys(data);
+    console.log(latestStatus);
+    console.log(Math.min(latestStatus))
 }
 
 request.send();
