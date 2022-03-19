@@ -8,9 +8,7 @@ console.log(filename)
 const data = await readJSON(filename);
 console.log(data);
 
-data.time = format(new Date(), "yyyy-mm-dd hh:mm:ss");
+data.time = format(new Date(), "yyyy-MM-dd HH:mm:ss");
 
 const newFilename = "postprocessed_" + filename;
 await writeJSON(newFilename, data);
-
-await removeFile(filename);
