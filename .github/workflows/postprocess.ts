@@ -8,9 +8,8 @@ const newFilename = "postprocessed_" + filename;
 const data = await readJSON(filename);
 const postprocessedData = await readJSON(newFilename);
 
-data.time = format(new Date(), "yyyy-MM-dd HH:mm:ss");
+const time = format(new Date(), "yyyy-MM-dd HH:mm:ss");
 
-const newData = { postprocessedData, data };
+postprocessedData[time] = data;
 
-
-await writeJSON(newFilename, newData);
+await writeJSON(newFilename, postprocessedData);
