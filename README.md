@@ -1,10 +1,8 @@
-# RudderStack Data Plane Status
+# RudderStack Data Plane Status Page
 
 [![data](https://github.com/esadek/experiment/actions/workflows/flat.yml/badge.svg)](https://github.com/esadek/experiment/actions/workflows/flat.yml)
 
 Monitor the status of your RudderStack Data Plane
-
-Built with [Flat Data](https://next.github.com/projects/flat-data/)
 
 ## Usage
 
