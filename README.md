@@ -1,6 +1,7 @@
 # RudderStack Data Plane Status Page
 
 [![data](https://github.com/esadek/experiment/actions/workflows/flat.yml/badge.svg)](https://github.com/esadek/experiment/actions/workflows/flat.yml)
+[![pages-build-deployment](https://github.com/esadek/experiment/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/esadek/experiment/actions/workflows/pages/pages-build-deployment)
 
 Monitor the status of your RudderStack Data Plane
 
