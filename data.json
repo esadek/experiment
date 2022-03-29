@@ -1,1 +1,1 @@
-{"appType": "GATEWAY", "server":"UP", "db":"UP","acceptingEvents":"TRUE","routingEvents":"TRUE","mode":"NORMAL","goroutines":"832", "backendConfigMode": "API", "lastSync":"2022-03-29T13:17:01Z", "lastRegulationSync":""}
+{"appType": "GATEWAY", "server":"UP", "db":"UP","acceptingEvents":"TRUE","routingEvents":"TRUE","mode":"NORMAL","goroutines":"995", "backendConfigMode": "API", "lastSync":"2022-03-29T13:54:16Z", "lastRegulationSync":""}
