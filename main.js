@@ -17,7 +17,22 @@ request.onload = function () {
     const data = JSON.parse(this.response);
     const statusTimes = Object.keys(data);
     const latestStatus = data[statusTimes[statusTimes.length - 1]];
-    console.log(latestStatus);
+
+    const days = {};
+    statusTimes.forEach(statusTime => {
+        const day = statusTime.slice(0, 10);
+        if (!days[day]) days[day] = "UP";
+        const status = data[statusTime];
+        if (
+            status.server !== "UP" ||
+            status.db !== "UP" ||
+            status.acceptingEvents !== "TRUE" ||
+            status.routingEvents !== "TRUE"
+        ) {
+            days[day] = "DOWN";
+        }
+    });
+    console.log(days);
 
     if (
         latestStatus.server === "UP" &&
@@ -32,7 +47,7 @@ request.onload = function () {
         allSystems.innerHTML = "<i class=\"bi bi-x-circle-fill\"></i>&ensp;System Down";
     }
 
-    if (latestStatus.server == 'UP') {
+    if (latestStatus.server === 'UP') {
         server.className = 'text-success';
         server.innerHTML = 'UP <i class=\"bi bi-check-circle-fill\"></i>';
     } else {
@@ -40,7 +55,7 @@ request.onload = function () {
         server.innerHTML = 'DOWN <i class=\"bi bi-x-circle-fill\"></i>';
     }
 
-    if (latestStatus.db == 'UP') {
+    if (latestStatus.db === 'UP') {
         database.className = 'text-success';
         database.innerHTML = 'UP <i class=\"bi bi-check-circle-fill\"></i>';
     } else {
@@ -48,7 +63,7 @@ request.onload = function () {
         database.innerHTML = 'DOWN <i class=\"bi bi-x-circle-fill\"></i>';
     }
 
-    if (latestStatus.acceptingEvents == 'TRUE') {
+    if (latestStatus.acceptingEvents === 'TRUE') {
         acceptingEvents.className = 'text-success';
         acceptingEvents.innerHTML = 'TRUE <i class=\"bi bi-check-circle-fill\"></i>';
     } else {
@@ -56,7 +71,7 @@ request.onload = function () {
         acceptingEvents.innerHTML = 'FALSE <i class=\"bi bi-x-circle-fill\"></i>';
     }
 
-    if (latestStatus.routingEvents == 'TRUE') {
+    if (latestStatus.routingEvents === 'TRUE') {
         routingEvents.className = 'text-success';
         routingEvents.innerHTML = 'TRUE <i class=\"bi bi-check-circle-fill\"></i>';
     } else {
