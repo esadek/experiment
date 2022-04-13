@@ -9,6 +9,14 @@ const goroutines = document.getElementById('goroutines');
 const backendConfigMode = document.getElementById('backend-config-mode');
 const lastSync = document.getElementById('last-sync');
 
+const checkCircle = "<i class=\"bi bi-check-circle-fill\"></i>";
+const xCircle = "<i class=\"bi bi-x-circle-fill\"></i";
+
+const upHtml = "UP " + checkCircle;
+const downHtml = "DOWN " + xCircle;
+const trueHtml = "TRUE " + checkCircle;
+const falseHtml = "FALSE " + xCircle;
+
 const request = new XMLHttpRequest();
 
 request.open("GET", "postprocessed_data.json", true);
@@ -41,42 +49,42 @@ request.onload = function () {
         latestStatus.routingEvents === "TRUE"
     ) {
         allSystems.style = "color: white; background-color: #198754; border-color: #125F3B;";
-        allSystems.innerHTML = "<i class=\"bi bi-check-circle-fill\"></i>&ensp;All Systems Operational";
+        allSystems.innerHTML = checkCircle + "&ensp;All Systems Operational";
     } else {
         allSystems.style = "color: white; background-color: #DC3545; border-color: #A71E2B;";
-        allSystems.innerHTML = "<i class=\"bi bi-x-circle-fill\"></i>&ensp;System Down";
+        allSystems.innerHTML = xCircle + "&ensp;System Down";
     }
 
-    if (latestStatus.server === 'UP') {
-        server.className = 'text-success';
-        server.innerHTML = 'UP <i class=\"bi bi-check-circle-fill\"></i>';
+    if (latestStatus.server === "UP") {
+        server.className = "text-success";
+        server.innerHTML = upHtml;
     } else {
-        server.className = 'text-danger';
-        server.innerHTML = 'DOWN <i class=\"bi bi-x-circle-fill\"></i>';
+        server.className = "text-danger";
+        server.innerHTML = downHtml;
     }
 
-    if (latestStatus.db === 'UP') {
-        database.className = 'text-success';
-        database.innerHTML = 'UP <i class=\"bi bi-check-circle-fill\"></i>';
+    if (latestStatus.db === "UP") {
+        database.className = "text-success";
+        database.innerHTML = upHtml;
     } else {
-        database.className = 'text-danger';
-        database.innerHTML = 'DOWN <i class=\"bi bi-x-circle-fill\"></i>';
+        database.className = "text-danger";
+        database.innerHTML = downHtml;
     }
 
     if (latestStatus.acceptingEvents === 'TRUE') {
-        acceptingEvents.className = 'text-success';
-        acceptingEvents.innerHTML = 'TRUE <i class=\"bi bi-check-circle-fill\"></i>';
+        acceptingEvents.className = "text-success";
+        acceptingEvents.innerHTML = trueHtml;
     } else {
-        acceptingEvents.className = 'text-danger';
-        acceptingEvents.innerHTML = 'FALSE <i class=\"bi bi-x-circle-fill\"></i>';
+        acceptingEvents.className = "text-danger";
+        acceptingEvents.innerHTML = falseHtml;
     }
 
     if (latestStatus.routingEvents === 'TRUE') {
-        routingEvents.className = 'text-success';
-        routingEvents.innerHTML = 'TRUE <i class=\"bi bi-check-circle-fill\"></i>';
+        routingEvents.className = "text-success";
+        routingEvents.innerHTML = trueHtml;
     } else {
-        routingEvents.className = 'text-danger';
-        routingEvents.innerHTML = 'FALSE <i class=\"bi bi-x-circle-fill\"></i>';
+        routingEvents.className = "text-danger";
+        routingEvents.innerHTML = trueHtml;
     }
 
     appType.innerHTML = latestStatus.appType;
