@@ -13,22 +13,22 @@
         <span id="data-plane-url" class="text-white"></span>
       </div>
     </nav>
-    <div class="bg-white border-bottom">
+    <div class="border-bottom">
       <div class="container py-5">
         <div id="all-systems" class="h4 alert p-4 mb-0"></div>
       </div>
     </div>
     <div class="container py-5">
-      <div class="row pb-4">
+      <div class="row">
         <div class="col">
           <ul class="list-group">
             <li class="list-group-item p-4">
               <div class="d-flex justify-content-between">
                 <h5>
-                  <i class="bi bi-check-circle-fill text-success" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" data-bs-content="Operational"></i>
+                  <i id="server-status" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus"></i>
                   &nbsp;Server
                 </h5>
-                <h5 class="text-success">100% Uptime</h5>
+                <h5 id="server-uptime"></h5>
               </div>
               <div id="server" style="display: grid; grid-auto-flow: column; grid-column-gap: 2px; height: 3rem;"></div>
               <div class="d-flex justify-content-between mt-1">
@@ -39,10 +39,10 @@
             <li class="list-group-item p-4">
               <div class="d-flex justify-content-between">
                 <h5>
-                  <i class="bi bi-check-circle-fill text-success" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" data-bs-content="Operational"></i>
+                  <i id="db-status" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus"></i>
                   &nbsp;Database
                 </h5>
-                <h5 class="text-success">100% Uptime</h5>
+                <h5 id="db-uptime"></h5>
               </div>
               <div id="database" style="display: grid; grid-auto-flow: column; grid-column-gap: 2px; height: 3rem;"></div>
               <div class="d-flex justify-content-between mt-1">
@@ -53,10 +53,10 @@
             <li class="list-group-item p-4">
               <div class="d-flex justify-content-between">
                 <h5>
-                  <i class="bi bi-check-circle-fill text-success" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" data-bs-content="Operational"></i>
+                  <i id="accepting-status" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus"></i>
                   &nbsp;Accepting Events
                 </h5>
-                <h5 class="text-success">100% Uptime</h5>
+                <h5 id="accepting-uptime"></h5>
               </div>
               <div id="accepting-events" style="display: grid; grid-auto-flow: column; grid-column-gap: 2px; height: 3rem;"></div>
               <div class="d-flex justify-content-between mt-1">
@@ -67,10 +67,10 @@
             <li class="list-group-item p-4">
               <div class="d-flex justify-content-between">
                 <h5>
-                  <i class="bi bi-check-circle-fill text-success" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" data-bs-content="Operational"></i>
+                  <i id="routing-status" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus"></i>
                   &nbsp;Routing Events
                 </h5>
-                <h5 class="text-success">100% Uptime</h5>
+                <h5 id="routing-uptime"></h5>
               </div>
               <div id="routing-events" style="display: grid; grid-auto-flow: column; grid-column-gap: 2px; height: 3rem;"></div>
               <div class="d-flex justify-content-between mt-1">
