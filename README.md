@@ -11,6 +11,10 @@ Monitor the status of your RudderStack Data Plane
 2. Set your data plane URL in [flat.yml](.github/workflows/flat.yml)
 3. Deploy with [GitHub Pages](https://pages.github.com/)
 
+## Screenshot
+
+![Screenshot](screenshot.png)
+
 ## License
 
 [MIT](LICENSE)
